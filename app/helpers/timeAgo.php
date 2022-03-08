@@ -1,7 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 3/8/2022
- * Time: 11:01 PM
- */
+define('TIMEZONE','ASIA/DHAKA');
+date_default_timezone_set(TIMEZONE);
+
+function last_seen($date_time){
+
+}
