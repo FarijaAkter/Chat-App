@@ -1,7 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 3/8/2022
- * Time: 4:43 AM
- */
+
+function getUser($username, $conn){
+    $sql = "SELECT * FROM users 
+           WHERE username=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$username]);
+
+    if($stmt->rowCount() === 1){
+       $user =$stmt->fetch();
+       return $user;
+    }else{
+        $user=[];
+        return $user;
+    }
+}
